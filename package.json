@@ -1,0 +1,27 @@
+{
+  "name": "icarus-bot",
+  "license": "GPL-2.0",
+  "version": "0.0.1",
+  "repository": "github:otavioltscha/icarus-bot",
+  "homepage": "https://github.com/otaviotscha/icarus-bot",
+  "type": "module",
+  "module": "index.ts",
+  "engines": {
+    "bun": "1.1.42"
+  },
+  "bugs": {
+    "url": "https://github.com/otaviotscha/icarus-bot/issues"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@types/bun": "^1.1.14",
+    "husky": "^9.1.7"
+  },
+  "peerDependencies": {
+    "typescript": "^5.7.2"
+  },
+  "scripts": {
+    "prepare": "husky"
+  }
+}
