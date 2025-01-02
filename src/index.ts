@@ -11,12 +11,12 @@ import {
 
 import { DISCORD_APP_TOKEN } from '~/configs/env'
 import { logger } from '~/common/logger'
+import { handleThrownError } from './common/helpers'
 import {
   addOrRefreshCommands,
   CommandCollection,
   getCommandsCollection,
 } from '~/commands'
-import { handleThrownError } from './common/helpers'
 
 class ClientWithCommands extends Client {
   commands: CommandCollection = new CommandCollection()
@@ -26,7 +26,9 @@ const client = new ClientWithCommands({ intents: [GatewayIntentBits.Guilds] })
 client.commands = getCommandsCollection()
 addOrRefreshCommands(client.commands)
 
-// When the client is ready, run this code (only once).
+/**
+ * When the client is ready, run this code (only once).
+ */
 client.once(Events.ClientReady, (readyClient) => {
   logger.info(`Ready! Logged in as ${readyClient.user.tag}`)
 })
@@ -58,5 +60,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
   }
 })
 
-// Log in to Discord with your client's token
+/**
+ * Log in to Discord with your client's token
+ */
 client.login(DISCORD_APP_TOKEN)

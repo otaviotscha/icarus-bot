@@ -1,6 +1,6 @@
 import { createLogger, transports } from 'winston'
 
-import { EnvironmentType, isTestEnvironment, NODE_ENV } from '~/configs/env'
+import { isProductionEnvironment, isTestEnvironment } from '~/configs/env'
 
 /**
  * Logging levels.
@@ -22,7 +22,7 @@ const transportsLogger =
   /**
    * TODO: add production transports
    */
-  NODE_ENV === EnvironmentType.PRODUCTION
+  isProductionEnvironment()
     ? [new transports.Console(consoleOptions)]
     : [new transports.Console(consoleOptions)]
 

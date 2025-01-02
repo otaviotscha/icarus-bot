@@ -10,9 +10,9 @@ import {
   SlashCommandBuilder,
 } from 'discord.js'
 
+import { DISCORD_APP_ID, DISCORD_APP_TOKEN } from '~/configs/env'
 import { logger } from '~/common/logger'
 import { handleThrownError } from '~/common/helpers'
-import { DISCORD_APP_ID, DISCORD_APP_TOKEN } from '~/configs/env'
 
 const COMMANDS_FOLDER_PATH = path.join(__dirname)
 
