@@ -8,7 +8,6 @@ export const environmentTypeEnum = z.enum(ENV_TYPES).Enum
 const envVariablesSchema = z.object({
   NODE_ENV: z.enum(ENV_TYPES).default(environmentTypeEnum.dev),
   DISCORD_APP_ID: z.string().nonempty(),
-  DISCORD_GUILD_ID: z.string().nonempty(),
   DISCORD_APP_TOKEN: z.string().nonempty(),
   GEMINI_API_KEY: z.string().nonempty(),
 })
@@ -37,7 +36,6 @@ const config = (): EnvVariables => {
 export const {
   NODE_ENV,
   DISCORD_APP_ID,
-  DISCORD_GUILD_ID,
   DISCORD_APP_TOKEN,
   GEMINI_API_KEY,
 } = config()
