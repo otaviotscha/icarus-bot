@@ -10,6 +10,7 @@ const envVariablesSchema = z.object({
   DISCORD_APP_ID: z.string().nonempty(),
   DISCORD_APP_TOKEN: z.string().nonempty(),
   GEMINI_API_KEY: z.string().nonempty(),
+  YOUTUBE_API_KEY: z.string().nonempty(),
 })
 export type EnvVariables = z.infer<typeof envVariablesSchema>
 
@@ -38,4 +39,5 @@ export const {
   DISCORD_APP_ID,
   DISCORD_APP_TOKEN,
   GEMINI_API_KEY,
+  YOUTUBE_API_KEY,
 } = config()

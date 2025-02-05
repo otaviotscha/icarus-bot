@@ -11,8 +11,8 @@ import {
 } from 'discord.js'
 
 import { DISCORD_APP_ID, DISCORD_APP_TOKEN } from '~/configs/env'
-import { logger } from '~/common/logger'
-import { handleThrownError } from '~/common/helpers'
+import { logger } from '~/utils/logger'
+import { handleThrownError } from '~/utils/helpers'
 
 const COMMANDS_FOLDER_PATH = path.join(__dirname)
 
@@ -97,6 +97,6 @@ export const addOrRefreshCommands = async (
       `Successfully reloaded ${commands.length} application (/) commands.`
     )
   } catch (error) {
-    handleThrownError(error)
+    throw handleThrownError(error)
   }
 }

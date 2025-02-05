@@ -10,8 +10,8 @@ import {
 } from 'discord.js'
 
 import { DISCORD_APP_TOKEN } from '~/configs/env'
-import { logger } from '~/common/logger'
-import { handleThrownError } from './common/helpers'
+import { logger } from '~/utils/logger'
+import { handleThrownError } from './utils/helpers'
 import {
   addOrRefreshCommands,
   CommandCollection,
@@ -63,4 +63,6 @@ client.on(Events.InteractionCreate, async (interaction) => {
 /**
  * Log in to Discord with your client's token
  */
-client.login(DISCORD_APP_TOKEN)
+client.login(DISCORD_APP_TOKEN).catch((error) => {
+  logger.error(`Failed to start. Error ${error}`)
+})

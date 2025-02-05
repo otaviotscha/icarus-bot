@@ -38,6 +38,7 @@
     "module-alias": "^2.2.3",
     "opusscript": "^0.1.1",
     "winston": "^3.17.0",
+    "ytdl-core": "^4.11.5",
     "zod": "^3.24.1"
   }
 }
